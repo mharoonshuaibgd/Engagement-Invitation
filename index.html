@@ -1107,7 +1107,11 @@
         <!-- <p class="hero-date" data-reveal style="--d:.8s">Friday, 30 October 2026</p> -->
       </div>
 
-      
+      <button class="scroll-cue" id="openInvite" type="button" aria-label="Open invitation">
+        <span>Open Invitation</span>
+        <span class="chev"></span>
+      </button>
+
     </section>
 
     <!-- =================================================================
@@ -1428,6 +1432,26 @@ if (openInvite) {
         createPetals();
         createSparkles();
       }
+
+      // Smooth mobile swipe slider between the two screens
+      const screens = document.querySelectorAll('.screen');
+      let lockSwipe = false;
+      screens.forEach((screen, index) => {
+        let startY = 0;
+        screen.addEventListener('touchstart', (e) => {
+          startY = e.touches[0].clientY;
+        }, { passive: true });
+        screen.addEventListener('touchend', (e) => {
+          if (lockSwipe) return;
+          const diff = startY - e.changedTouches[0].clientY;
+          if (Math.abs(diff) < 50) return;
+          const target = diff > 0 ? screens[index + 1] : screens[index - 1];
+          if (!target) return;
+          lockSwipe = true;
+          target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });
+          setTimeout(() => lockSwipe = false, 800);
+        }, { passive: true });
+      });
     })();
   </script>
   <script>// Smooth mobile swipe snap
