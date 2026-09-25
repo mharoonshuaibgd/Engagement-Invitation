@@ -69,6 +69,7 @@
       scroll-behavior: smooth;
       overflow-x: hidden;
       -webkit-text-size-adjust: 100%;
+      touch-action: pan-y;
     }
 
     body {
@@ -77,6 +78,7 @@
       background: var(--emerald-deep);
       overflow-x: hidden;
       line-height: 1.5;
+      overscroll-behavior-y: contain;
     }
 
     [hidden] {
@@ -1107,10 +1109,7 @@
         <!-- <p class="hero-date" data-reveal style="--d:.8s">Friday, 30 October 2026</p> -->
       </div>
 
-      <button class="scroll-cue" id="openInvite" type="button" aria-label="Open invitation and scroll to event details">
-        Open Invitation
-        <span class="chev" aria-hidden="true"></span>
-      </button>
+      
     </section>
 
     <!-- =================================================================
@@ -1427,6 +1426,70 @@
       }
     })();
   </script>
+  <script>// Smooth mobile swipe snap
+(function(){
+
+  const screens = document.querySelectorAll('.screen');
+
+  let isScrolling = false;
+
+  screens.forEach((screen, index)=>{
+
+    screen.addEventListener('touchstart', function(e){
+
+      this.startY = e.touches[0].clientY;
+
+    }, {passive:true});
+
+
+    screen.addEventListener('touchend', function(e){
+
+      if(isScrolling) return;
+
+      let endY = e.changedTouches[0].clientY;
+      let diff = this.startY - endY;
+
+
+      // swipe up
+      if(diff > 50 && screens[index + 1]){
+
+        isScrolling = true;
+
+        screens[index + 1].scrollIntoView({
+          behavior:'smooth',
+          block:'start'
+        });
+
+        setTimeout(()=>{
+          isScrolling = false;
+        },800);
+
+      }
+
+
+      // swipe down
+      if(diff < -50 && screens[index - 1]){
+
+        isScrolling = true;
+
+        screens[index - 1].scrollIntoView({
+          behavior:'smooth',
+          block:'start'
+        });
+
+        setTimeout(()=>{
+          isScrolling = false;
+        },800);
+
+      }
+
+
+    }, {passive:true});
+
+  });
+
+
+})();</script>
 </body>
 
 </html>
