@@ -1,0 +1,1432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Hamna &amp; Haroon | Engagement Invitation</title>
+  <meta name="description"
+    content="You are warmly invited to the engagement ceremony of Hamna and Haroon on Friday, 30 October 2026.">
+  <meta name="theme-color" content="#06402b">
+  <meta property="og:title" content="Hamna & Haroon | Engagement Invitation">
+  <meta property="og:description" content="Join us for the Mangni of Hamna & Haroon on Friday, 30 October 2026.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon: a tiny inline marigold, no external file needed -->
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%2306402b'/%3E%3Ccircle cx='32' cy='32' r='17' fill='%23f5a623'/%3E%3Ccircle cx='32' cy='32' r='10' fill='%23e07a1f'/%3E%3Ccircle cx='32' cy='32' r='4' fill='%23b3341f'/%3E%3C/svg%3E">
+
+  <!-- Google Fonts: Cinzel Decorative (names), Cinzel (headings), Lora (body), Amiri (Bismillah) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Amiri&family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@400;600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap"
+    rel="stylesheet">
+
+  <style>
+    /* =====================================================================
+       1. DESIGN TOKENS
+       ===================================================================== */
+    :root {
+      --emerald-deep: #032a1c;
+      --emerald: #06402b;
+      --emerald-mid: #0b5a3c;
+      --emerald-soft: #15855a;
+      --gold: #d4af37;
+      --gold-light: #f3d97a;
+      --gold-pale: #fff1b8;
+      --gold-deep: #b8892b;
+      --marigold: #f5a623;
+      --marigold-deep: #e07a1f;
+      --terracotta: #b8432b;
+      --crimson: #8f1d21;
+      --cream: #fbf3e0;
+      --ink: #0b3d2e;
+
+      --font-display: 'Cinzel Decorative', Georgia, serif;
+      --font-head: 'Cinzel', Georgia, serif;
+      --font-body: 'Lora', Georgia, serif;
+      --font-arabic: 'Amiri', 'Times New Roman', serif;
+
+      --gold-gradient: linear-gradient(110deg, #b8892b 0%, #f7e08a 22%, #d4af37 45%, #fff1b8 62%, #d4af37 78%, #b8892b 100%);
+    }
+
+    /* =====================================================================
+       2. BASE + SCROLL SNAP (exactly two screens)
+       ===================================================================== */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      height: 100%;
+      scroll-snap-type: y mandatory;
+      /* the two sections are the only snap points */
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--cream);
+      background: var(--emerald-deep);
+      overflow-x: hidden;
+      line-height: 1.5;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    .svg-defs {
+      position: absolute;
+      width: 0;
+      height: 0;
+      overflow: hidden;
+    }
+
+    /* One full-viewport screen per section */
+    .screen {
+      position: relative;
+      height: 100vh;
+      height: 100dvh;
+      /* handles mobile browser chrome */
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+      overflow: hidden;
+      isolation: isolate;
+      display: flex;
+      background:
+        radial-gradient(ellipse at 12% 8%, rgba(245, 166, 35, .20), transparent 42%),
+        radial-gradient(ellipse at 88% 96%, rgba(184, 67, 43, .24), transparent 44%),
+        linear-gradient(180deg, var(--emerald-mid) 0%, var(--emerald) 48%, var(--emerald-deep) 100%);
+    }
+
+    /* Jaali lattice: two crossing diagonal hairlines in faint gold */
+    .screen::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background-image:
+        repeating-linear-gradient(45deg, rgba(243, 217, 122, .075) 0 1px, transparent 1px 26px),
+        repeating-linear-gradient(-45deg, rgba(243, 217, 122, .075) 0 1px, transparent 1px 26px);
+    }
+
+    /* Soft vignette so the edges feel like a lit hall */
+    .screen::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background: radial-gradient(ellipse at center, transparent 50%, rgba(0, 0, 0, .38) 100%);
+    }
+
+    /* =====================================================================
+       3. SHARED ORNAMENTS: gold frame + marigold corner clusters
+       ===================================================================== */
+    .frame {
+      position: absolute;
+      inset: clamp(10px, 2.4vw, 22px);
+      z-index: 1;
+      border: 1px solid rgba(212, 175, 55, .62);
+      pointer-events: none;
+    }
+
+    .frame::before {
+      content: '';
+      position: absolute;
+      inset: 5px;
+      border: 1px solid rgba(212, 175, 55, .28);
+    }
+
+    .corner {
+      position: absolute;
+      z-index: 1;
+      width: clamp(68px, 13vw, 128px);
+      height: auto;
+      aspect-ratio: 1;
+      pointer-events: none;
+      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, .35));
+    }
+
+    .corner--tl {
+      top: 2px;
+      left: 2px;
+    }
+
+    .corner--tr {
+      top: 2px;
+      right: 2px;
+      transform: scaleX(-1);
+    }
+
+    .corner--bl {
+      bottom: 2px;
+      left: 2px;
+      transform: scaleY(-1);
+    }
+
+    .corner--br {
+      bottom: 2px;
+      right: 2px;
+      transform: scale(-1);
+    }
+
+    /* =====================================================================
+       4. SCREEN ONE: HERO / COVER
+       ===================================================================== */
+    .hero {
+      text-align: center;
+      padding:
+        calc(env(safe-area-inset-top, 0px) + clamp(30px, 5vh, 52px)) clamp(22px, 7vw, 56px) calc(env(safe-area-inset-bottom, 0px) + clamp(78px, 12vh, 112px));
+    }
+
+    .hero__content {
+      position: relative;
+      z-index: 2;
+      margin: auto;
+      /* centres, but never clips the top if content is tall */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: clamp(6px, 1.4vh, 14px);
+      width: 100%;
+      max-width: 760px;
+    }
+
+    /* Faint paisley (boteh) motifs behind the content */
+    .paisley {
+      position: absolute;
+      z-index: 0;
+      width: clamp(120px, 22vw, 260px);
+      height: auto;
+      aspect-ratio: 100 / 150;
+      color: var(--gold);
+      opacity: .14;
+      pointer-events: none;
+    }
+
+    .paisley--l {
+      left: -3%;
+      bottom: 4%;
+      transform: rotate(-14deg);
+    }
+
+    .paisley--r {
+      right: -3%;
+      top: 4%;
+      transform: rotate(166deg);
+    }
+
+    .bismillah {
+      font-family: var(--font-arabic);
+      direction: rtl;
+      font-size: clamp(1.15rem, 4.4vw, 1.75rem);
+      line-height: 1.5;
+      color: var(--gold-light);
+    }
+
+    .eyebrow {
+      font-style: italic;
+      font-size: clamp(.84rem, 2.7vw, 1.05rem);
+      color: rgba(251, 243, 224, .88);
+    }
+
+    /* --- The jharokha arch framing the names: the one bold element --- */
+    .arch {
+      position: relative;
+      width: min(78vw, 44vh, 360px);
+      aspect-ratio: 400 / 480;
+      margin: clamp(2px, .8vh, 8px) 0;
+    }
+
+    .arch__svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+      filter: drop-shadow(0 0 12px rgba(212, 175, 55, .35));
+    }
+
+    .arch__glow {
+      position: absolute;
+      left: 12%;
+      right: 12%;
+      top: 18%;
+      bottom: 6%;
+      background: radial-gradient(ellipse at 50% 45%, rgba(245, 166, 35, .24), rgba(245, 166, 35, 0) 68%);
+      pointer-events: none;
+    }
+
+    .names {
+      position: absolute;
+      left: 8%;
+      right: 8%;
+      top: 34%;
+      bottom: 7%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      filter: drop-shadow(0 2px 10px rgba(0, 0, 0, .45));
+    }
+
+    .names__name {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(1.55rem, 7.6vw, 2.7rem);
+      line-height: 1.15;
+      letter-spacing: .02em;
+      background: var(--gold-gradient);
+      background-size: 220% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: shimmer 8s linear infinite;
+    }
+
+    .names__amp {
+      font-family: var(--font-body);
+      font-style: italic;
+      font-size: clamp(1.4rem, 6.2vw, 2.3rem);
+      line-height: 1;
+      color: var(--marigold);
+      margin: .12em 0;
+    }
+
+    .names__flower {
+      width: clamp(28px, 7vw, 40px);
+      height: auto;
+      aspect-ratio: 1;
+      margin-top: clamp(6px, 1.2vh, 12px);
+    }
+
+    .divider {
+      width: clamp(150px, 44vw, 240px);
+      height: auto;
+      aspect-ratio: 240 / 24;
+    }
+
+    .event-type {
+      font-family: var(--font-head);
+      font-weight: 600;
+      letter-spacing: .3em;
+      padding-left: .3em;
+      /* visually re-centres tracked text */
+      text-transform: uppercase;
+      font-size: clamp(.68rem, 2.4vw, .95rem);
+      color: var(--gold-light);
+    }
+
+    .hero-date {
+      font-size: clamp(.92rem, 3.1vw, 1.2rem);
+      color: var(--cream);
+    }
+
+    /* Animated "Open Invitation" cue pinned to the bottom of screen one */
+    .scroll-cue {
+      position: absolute;
+      left: 50%;
+      bottom: calc(env(safe-area-inset-bottom, 0px) + clamp(22px, 4.5vh, 40px));
+      transform: translateX(-50%);
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      padding: 18px 14px;
+      background: none;
+      border: 0;
+      color: var(--gold-light);
+      font-family: var(--font-head);
+      font-size: .72rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .scroll-cue .chev {
+      width: 14px;
+      height: 14px;
+      border-right: 2px solid var(--gold);
+      border-bottom: 2px solid var(--gold);
+      transform: rotate(45deg);
+      animation: bob 1.8s ease-in-out infinite;
+    }
+
+    /* =====================================================================
+       5. SCREEN TWO: EVENT DETAILS + VENUE
+       ===================================================================== */
+    .details {
+      padding:
+        calc(env(safe-area-inset-top, 0px) + clamp(26px, 5vh, 52px)) clamp(18px, 6vw, 48px) calc(env(safe-area-inset-bottom, 0px) + clamp(26px, 5vh, 52px));
+      overflow-y: auto;
+      /* safety net on very short screens */
+    }
+
+    /* The invitation card itself: cream stock with a double gold rule */
+    .card {
+      position: relative;
+      z-index: 2;
+      margin: auto;
+      width: 100%;
+      max-width: 560px;
+      padding: clamp(16px, 3vh, 30px) clamp(16px, 4.5vw, 36px);
+      display: flex;
+      flex-direction: column;
+      gap: clamp(10px, 1.8vh, 18px);
+      text-align: center;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 18% 8%, rgba(245, 166, 35, .14), transparent 40%),
+        radial-gradient(circle at 86% 92%, rgba(184, 67, 43, .12), transparent 40%),
+        var(--cream);
+      border: 1px solid var(--gold);
+      border-radius: 14px;
+      outline: 1px solid rgba(212, 175, 55, .55);
+      outline-offset: 5px;
+      box-shadow: 0 30px 60px -30px rgba(0, 0, 0, .65);
+    }
+
+    /* Small marigold clusters on two card corners */
+    .card__corner {
+      position: absolute;
+      width: clamp(54px, 9vw, 84px);
+      height: auto;
+      aspect-ratio: 1;
+      pointer-events: none;
+      filter: drop-shadow(0 3px 6px rgba(0, 0, 0, .25));
+    }
+
+    .card__corner--tl {
+      top: -14px;
+      left: -14px;
+    }
+
+    .card__corner--br {
+      bottom: -14px;
+      right: -14px;
+      transform: scale(-1);
+    }
+
+    .card__head {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .card__eyebrow {
+      font-style: italic;
+      font-size: clamp(.8rem, 2.6vw, .98rem);
+      color: var(--terracotta);
+    }
+
+    .card__title {
+      font-family: var(--font-head);
+      font-weight: 600;
+      font-size: clamp(1.15rem, 4.6vw, 2rem);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      line-height: 1.2;
+      color: var(--emerald);
+    }
+
+    .card__sub {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(.85rem, 3vw, 1.15rem);
+      color: var(--gold-deep);
+    }
+
+    .card__head .divider {
+      margin-top: 4px;
+    }
+
+    .card__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(12px, 2vh, 20px);
+    }
+
+    .col {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(16px, 1.6vh, 16px);
+    }
+
+    /* Date block: the big "30" is the anchor of screen two */
+    .date-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      line-height: 1;
+    }
+
+    .date-block__day {
+      font-family: var(--font-head);
+      letter-spacing: .3em;
+      padding-left: .3em;
+      text-transform: uppercase;
+      font-size: .7rem;
+      color: var(--terracotta);
+    }
+
+    .date-block__num {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(2.8rem, 10vw, 4.4rem);
+      line-height: 1;
+      margin: .06em 0;
+      color: var(--emerald);
+    }
+
+    .date-block__month {
+      font-family: var(--font-head);
+      font-weight: 600;
+      letter-spacing: .18em;
+      padding-left: .18em;
+      text-transform: uppercase;
+      font-size: clamp(.8rem, 2.8vw, 1rem);
+      color: var(--ink);
+    }
+
+    /* Time + venue rows */
+    .info {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: max-content;
+      max-width: 100%;
+      margin: 0 auto;
+      gap: clamp(10px, 1.6vh, 14px);
+      font-size: clamp(.86rem, 2.9vw, 1rem);
+      line-height: 1.45;
+    }
+
+    .info li {
+      display: flex;
+      flex-direction: row;
+      gap: 8px;
+      align-items: start;
+      justify-content: center;
+      text-align: center;
+      width: 100%;
+    }
+
+    .info li>div {
+      text-align: center;
+    }
+
+    .info .ico {
+      width: 20px;
+      height: 20px;
+      margin-top: 0;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .info strong {
+      font-weight: 600;
+      color: var(--emerald);
+    }
+
+    .info .muted {
+      color: rgba(11, 61, 46, .7);
+      font-size: .92em;
+    }
+
+    .ico {
+      flex: 0 0 auto;
+      width: 20px;
+      height: 20px;
+      margin-top: 0;
+      color: var(--terracotta);
+    }
+
+    .info a {
+      color: var(--emerald-soft);
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px solid currentColor;
+    }
+
+    .info a:hover {
+      color: var(--terracotta);
+    }
+
+    /* Countdown tiles */
+    .countdown {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: clamp(6px, 1.6vw, 12px);
+    }
+
+    .cd {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: .55rem .25rem .45rem;
+      border-radius: 10px;
+      background: linear-gradient(160deg, var(--emerald-mid), var(--emerald));
+      border: 1px solid rgba(212, 175, 55, .6);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08);
+    }
+
+    .cd__num {
+      font-family: var(--font-head);
+      font-weight: 600;
+      font-size: clamp(1.35rem, 5vw, 2rem);
+      line-height: 1.1;
+      color: var(--gold-light);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .cd__label {
+      margin-top: 2px;
+      font-size: .62rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(251, 243, 224, .78);
+    }
+
+    .cd__note {
+      margin-top: 6px;
+      font-style: italic;
+      font-size: clamp(.8rem, 2.6vw, .95rem);
+      color: rgba(11, 61, 46, .75);
+    }
+
+    /* Buttons */
+    .actions {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      flex: 1 1 200px;
+      /* stacks full-width on phones, sits side by side on wider screens */
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: .7rem 1rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-family: var(--font-head);
+      font-weight: 600;
+      font-size: clamp(.68rem, 1.6vw, .78rem);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 18px -8px rgba(0, 0, 0, .5);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    .btn--gold {
+      background: linear-gradient(135deg, #f3d97a, #d4af37 55%, #b8892b);
+      color: #2a1d05;
+      border-color: rgba(184, 137, 43, .6);
+    }
+
+    .btn--crimson {
+      background: linear-gradient(135deg, var(--terracotta), var(--crimson));
+      color: #fff3d6;
+      border-color: rgba(243, 217, 122, .6);
+    }
+
+    .btn:focus-visible,
+    .scroll-cue:focus-visible,
+    .menu a:focus-visible {
+      outline: 2px solid var(--marigold);
+      outline-offset: 3px;
+    }
+
+    /* "Add to Calendar" dropdown (opens upward so it never leaves the screen) */
+    .menu-wrap {
+      position: relative;
+      flex: 1 1 200px;
+      display: flex;
+    }
+
+    .menu-wrap .btn {
+      width: 100%;
+    }
+
+    .menu {
+      position: absolute;
+      bottom: calc(100% + 8px);
+      left: 0;
+      right: 0;
+      z-index: 5;
+      overflow: hidden;
+      background: var(--cream);
+      border: 1px solid var(--gold);
+      border-radius: 10px;
+      box-shadow: 0 14px 30px -10px rgba(0, 0, 0, .5);
+    }
+
+    .menu a {
+      display: block;
+      padding: .7rem .9rem;
+      font-size: .86rem;
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(212, 175, 55, .35);
+    }
+
+    .menu a:last-child {
+      border-bottom: 0;
+    }
+
+    .menu a:hover {
+      background: rgba(245, 166, 35, .16);
+    }
+
+    .card__foot {
+      font-style: italic;
+      font-size: clamp(.8rem, 2.6vw, .95rem);
+      color: var(--terracotta);
+    }
+
+    /* =====================================================================
+       6. MOTION: reveal, petals, sparkles, shimmer
+       ===================================================================== */
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .9s ease var(--d, 0s), transform .9s ease var(--d, 0s);
+    }
+
+    [data-reveal].is-in {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* Falling marigold petals (elements are created by JS) */
+    .petals {
+      position: fixed;
+      inset: 0;
+      z-index: 3;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .petal {
+      position: absolute;
+      top: -10vh;
+      left: var(--x);
+      width: var(--s);
+      height: calc(var(--s) * 1.7);
+      opacity: var(--o);
+      border-radius: 50% 50% 50% 50% / 70% 70% 30% 30%;
+      background: radial-gradient(circle at 35% 30%, #ffd166 0%, #f5a623 50%, #e07a1f 100%);
+      box-shadow: 0 0 4px rgba(224, 122, 31, .4);
+      will-change: transform;
+      animation: fall var(--d) linear var(--delay) infinite;
+    }
+
+    /* Twinkling gold sparkles on the hero (elements are created by JS) */
+    .sparkle {
+      position: absolute;
+      z-index: 1;
+      width: var(--size);
+      height: var(--size);
+      border-radius: 50%;
+      background: #fff6d5;
+      box-shadow: 0 0 6px 2px rgba(243, 217, 122, .75);
+      pointer-events: none;
+      animation: twinkle 3s ease-in-out infinite;
+    }
+
+    @keyframes shimmer {
+      to {
+        background-position: 220% center;
+      }
+    }
+
+    @keyframes bob {
+
+      0%,
+      100% {
+        transform: translateY(0) rotate(45deg);
+        opacity: .5;
+      }
+
+      50% {
+        transform: translateY(6px) rotate(45deg);
+        opacity: 1;
+      }
+    }
+
+    @keyframes twinkle {
+
+      0%,
+      100% {
+        opacity: 0;
+        transform: scale(.3);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translate3d(0, 0, 0) rotate(var(--r));
+      }
+
+      25% {
+        transform: translate3d(3vw, 30vh, 0) rotate(calc(var(--r) + 110deg));
+      }
+
+      50% {
+        transform: translate3d(-2.5vw, 58vh, 0) rotate(calc(var(--r) + 200deg));
+      }
+
+      75% {
+        transform: translate3d(3vw, 86vh, 0) rotate(calc(var(--r) + 300deg));
+      }
+
+      100% {
+        transform: translate3d(-1vw, 120vh, 0) rotate(calc(var(--r) + 420deg));
+      }
+    }
+
+    .venue-wrap {
+      text-align: center;
+    }
+
+    .venue-title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .venue-title .ico {
+      width: 20px;
+      height: 20px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .names__name,
+      .chev,
+      .petal,
+      .sparkle {
+        animation: none;
+      }
+
+      [data-reveal] {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+
+
+    @media(max-width:749px){
+      .info li {
+        align-items: center;
+      }
+
+      .info .ico {
+        margin-top: 0;
+      }
+    }
+    /* =====================================================================
+       7. RESPONSIVE TUNING
+       ===================================================================== */
+    /* Wide screens: two-column card */
+    @media (min-width: 860px) {
+      .card {
+        max-width: 960px;
+        padding: clamp(24px, 4vh, 40px) clamp(28px, 4vw, 52px);
+      }
+
+      .card__grid {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: clamp(20px, 3vw, 44px);
+      }
+
+      .card__grid>.col:first-child {
+        border-right: 1px solid rgba(212, 175, 55, .45);
+        padding-right: clamp(20px, 3vw, 44px);
+      }
+
+      .actions {
+        gap: 14px;
+      }
+    }
+
+    /* Short viewports (older phones, landscape): trim non-essential height */
+    @media (max-height: 620px) {
+      .bismillah {
+        font-size: 1rem;
+      }
+
+      .arch {
+        width: min(70vw, 42vh, 300px);
+      }
+
+      .date-block__num {
+        font-size: 2.4rem;
+      }
+
+      .card {
+        gap: 8px;
+      }
+
+      .card__foot,
+      .info .muted {
+        display: none;
+      }
+
+      .corner {
+        width: clamp(52px, 10vw, 90px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =====================================================================
+       SVG SYMBOL LIBRARY (inline, reused everywhere via <use>)
+       ===================================================================== -->
+  <svg class="svg-defs" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#b8892b" />
+        <stop offset=".3" stop-color="#f7e08a" />
+        <stop offset=".55" stop-color="#d4af37" />
+        <stop offset=".8" stop-color="#fff1b8" />
+        <stop offset="1" stop-color="#b8892b" />
+      </linearGradient>
+
+      <!-- Mughal / jharokha cusped arch, 7 lobes. No fill or stroke here so each <use> can style it. -->
+      <path id="arch-shape" d="M40 470 V230
+        A40 40 0 0 1 55.8 160.6  A40 40 0 0 1 100.2 104.9  A40 40 0 0 1 164.4 74
+        A40 40 0 0 1 235.6 74    A40 40 0 0 1 299.8 104.9  A40 40 0 0 1 344.2 160.6
+        A40 40 0 0 1 360 230 V470 Z" />
+
+      <!-- Marigold petals (three sizes, each rotated into a ring below) -->
+      <ellipse id="mp1" cx="0" cy="-34" rx="9" ry="15" />
+      <ellipse id="mp2" cx="0" cy="-23" rx="8" ry="12" />
+      <ellipse id="mp3" cx="0" cy="-14" rx="6" ry="9" />
+
+      <!-- Marigold (genda phool) -->
+      <symbol id="marigold" viewBox="-50 -50 100 100">
+        <g fill="#de7a1c">
+          <use href="#mp1" />
+          <use href="#mp1" transform="rotate(30)" />
+          <use href="#mp1" transform="rotate(60)" />
+          <use href="#mp1" transform="rotate(90)" />
+          <use href="#mp1" transform="rotate(120)" />
+          <use href="#mp1" transform="rotate(150)" />
+          <use href="#mp1" transform="rotate(180)" />
+          <use href="#mp1" transform="rotate(210)" />
+          <use href="#mp1" transform="rotate(240)" />
+          <use href="#mp1" transform="rotate(270)" />
+          <use href="#mp1" transform="rotate(300)" />
+          <use href="#mp1" transform="rotate(330)" />
+        </g>
+        <g fill="#f39a1e" transform="rotate(15)">
+          <use href="#mp2" />
+          <use href="#mp2" transform="rotate(30)" />
+          <use href="#mp2" transform="rotate(60)" />
+          <use href="#mp2" transform="rotate(90)" />
+          <use href="#mp2" transform="rotate(120)" />
+          <use href="#mp2" transform="rotate(150)" />
+          <use href="#mp2" transform="rotate(180)" />
+          <use href="#mp2" transform="rotate(210)" />
+          <use href="#mp2" transform="rotate(240)" />
+          <use href="#mp2" transform="rotate(270)" />
+          <use href="#mp2" transform="rotate(300)" />
+          <use href="#mp2" transform="rotate(330)" />
+        </g>
+        <g fill="#ffc247" transform="rotate(8)">
+          <use href="#mp3" />
+          <use href="#mp3" transform="rotate(36)" />
+          <use href="#mp3" transform="rotate(72)" />
+          <use href="#mp3" transform="rotate(108)" />
+          <use href="#mp3" transform="rotate(144)" />
+          <use href="#mp3" transform="rotate(180)" />
+          <use href="#mp3" transform="rotate(216)" />
+          <use href="#mp3" transform="rotate(252)" />
+          <use href="#mp3" transform="rotate(288)" />
+          <use href="#mp3" transform="rotate(324)" />
+        </g>
+        <circle r="6.5" fill="#b3341f" />
+        <circle r="3" fill="#7a1f16" />
+      </symbol>
+
+      <!-- Leaf -->
+      <symbol id="leaf" viewBox="-20 -40 40 80">
+        <path d="M0 -38 C18 -20 18 20 0 38 C-18 20 -18 -20 0 -38Z" fill="#2e8b57" />
+        <path d="M0 -30 V30" stroke="#a8e0bd" stroke-width="1.2" opacity=".6" />
+      </symbol>
+
+      <!-- Corner cluster: two leaves behind four marigolds -->
+      <symbol id="corner" viewBox="0 0 110 110">
+        <use href="#leaf" x="65" y="20" width="26" height="52" transform="rotate(70 78 46)" />
+        <use href="#leaf" x="33" y="52" width="26" height="52" transform="rotate(20 46 78)" />
+        <use href="#marigold" x="2" y="2" width="66" height="66" />
+        <use href="#marigold" x="60" y="4" width="40" height="40" />
+        <use href="#marigold" x="4" y="60" width="40" height="40" />
+        <use href="#marigold" x="52" y="52" width="28" height="28" />
+      </symbol>
+
+      <!-- Paisley (boteh), drawn in currentColor -->
+      <symbol id="paisley" viewBox="0 0 100 150">
+        <path
+          d="M50 142 C18 128 2 90 12 55 C20 28 38 10 58 8 C76 6 90 20 88 38 C86 54 70 62 68 84 C66 106 62 128 50 142Z"
+          fill="currentColor" opacity=".18" />
+        <path
+          d="M50 142 C18 128 2 90 12 55 C20 28 38 10 58 8 C76 6 90 20 88 38 C86 54 70 62 68 84 C66 106 62 128 50 142Z"
+          fill="none" stroke="currentColor" stroke-width="1.5" />
+        <path d="M88 38 C96 46 90 58 80 54 C74 52 76 44 82 46" fill="none" stroke="currentColor" stroke-width="1.5"
+          stroke-linecap="round" />
+        <path
+          d="M50 128 C30 116 20 90 26 62 C31 42 44 28 58 26 C70 24 78 32 76 44 C74 56 62 64 60 84 C58 104 56 118 50 128Z"
+          fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3" />
+        <circle cx="52" cy="58" r="3.2" fill="currentColor" />
+        <circle cx="46" cy="80" r="2.6" fill="currentColor" />
+        <circle cx="44" cy="100" r="2" fill="currentColor" />
+      </symbol>
+
+      <!-- Ornamental divider -->
+      <symbol id="divider" viewBox="0 0 240 24">
+        <path d="M0 12 H96 M144 12 H240" stroke="#d4af37" stroke-width="1" opacity=".8" />
+        <path d="M120 3 l9 9 -9 9 -9 -9z" fill="none" stroke="#d4af37" stroke-width="1.2" />
+        <path d="M120 7 l5 5 -5 5 -5 -5z" fill="#f5a623" />
+        <circle cx="104" cy="12" r="2" fill="#d4af37" />
+        <circle cx="136" cy="12" r="2" fill="#d4af37" />
+      </symbol>
+
+      <!-- Icons -->
+      <symbol id="ico-clock" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8" />
+        <path d="M12 7v5l3.5 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+      </symbol>
+      <symbol id="ico-pin" viewBox="0 0 24 24">
+        <path d="M12 21s-6.5-6.2-6.5-11a6.5 6.5 0 0 1 13 0c0 4.8-6.5 11-6.5 11z" fill="none" stroke="currentColor"
+          stroke-width="1.8" />
+        <circle cx="12" cy="10" r="2.4" fill="currentColor" />
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- Falling petals layer (filled by JS, spans both screens) -->
+  <div class="petals" id="petals" aria-hidden="true"></div>
+
+  <main>
+    <!-- =================================================================
+         SCREEN ONE: HERO / COVER
+         ================================================================= -->
+    <section class="screen hero" id="hero">
+      <div class="frame"></div>
+      <svg class="corner corner--tl" viewBox="0 0 110 110" aria-hidden="true">
+        <use href="#corner" />
+      </svg>
+      <svg class="corner corner--tr" viewBox="0 0 110 110" aria-hidden="true">
+        <use href="#corner" />
+      </svg>
+      <svg class="corner corner--bl" viewBox="0 0 110 110" aria-hidden="true">
+        <use href="#corner" />
+      </svg>
+      <svg class="corner corner--br" viewBox="0 0 110 110" aria-hidden="true">
+        <use href="#corner" />
+      </svg>
+      <svg class="paisley paisley--l" viewBox="0 0 100 150" aria-hidden="true">
+        <use href="#paisley" />
+      </svg>
+      <svg class="paisley paisley--r" viewBox="0 0 100 150" aria-hidden="true">
+        <use href="#paisley" />
+      </svg>
+
+      <div class="hero__content">
+        <!-- Remove this line if you prefer the cover without the Bismillah -->
+        <p class="bismillah" data-reveal style="--d:.05s">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
+
+        <p class="eyebrow" data-reveal style="--d:.2s">Together with their families</p>
+
+        <div class="arch" data-reveal style="--d:.35s">
+          <div class="arch__glow"></div>
+          <svg class="arch__svg" viewBox="0 0 400 480" aria-hidden="true">
+            <use href="#arch-shape" fill="none" stroke="url(#goldGrad)" stroke-width="3" stroke-linejoin="round" />
+            <use href="#arch-shape" fill="none" stroke="#d4af37" stroke-width="1" opacity=".7"
+              transform="translate(200 261) scale(.925) translate(-200 -261)" />
+            <path d="M200 30 l7 12 -7 12 -7 -12z" fill="#f5a623" stroke="#d4af37" stroke-width="1" />
+            <circle cx="200" cy="22" r="3" fill="#d4af37" />
+          </svg>
+          <h1 class="names">
+            <span class="names__name">Hamna</span>
+            <span class="names__amp">&amp;</span>
+            <span class="names__name">Haroon</span>
+            <svg class="names__flower" viewBox="0 0 100 100" aria-hidden="true">
+              <use href="#marigold" width="100" height="100" />
+            </svg>
+          </h1>
+        </div>
+
+        <svg class="divider" viewBox="0 0 240 24" aria-hidden="true" data-reveal style="--d:.55s">
+          <use href="#divider" />
+        </svg>
+        <p class="event-type" data-reveal style="--d:.65s">Engagement Ceremony</p>
+        <!-- <p class="hero-date" data-reveal style="--d:.8s">Friday, 30 October 2026</p> -->
+      </div>
+
+      <button class="scroll-cue" id="openInvite" type="button" aria-label="Open invitation and scroll to event details">
+        Open Invitation
+        <span class="chev" aria-hidden="true"></span>
+      </button>
+    </section>
+
+    <!-- =================================================================
+         SCREEN TWO: EVENT DETAILS + VENUE
+         ================================================================= -->
+    <section class="screen details" id="details">
+      <div class="frame"></div>
+      <svg class="corner corner--tr" viewBox="0 0 110 110" aria-hidden="true">
+        <use href="#corner" />
+      </svg>
+      <svg class="corner corner--bl" viewBox="0 0 110 110" aria-hidden="true">
+        <use href="#corner" />
+      </svg>
+
+      <article class="card" data-reveal>
+        <svg class="card__corner card__corner--tl" viewBox="0 0 110 110" aria-hidden="true">
+          <use href="#corner" />
+        </svg>
+        <svg class="card__corner card__corner--br" viewBox="0 0 110 110" aria-hidden="true">
+          <use href="#corner" />
+        </svg>
+
+        <header class="card__head">
+          <p class="card__eyebrow">You are warmly invited to the</p>
+          <h2 class="card__title">Engagement Ceremony</h2>
+          <p class="card__sub">of Hamna &amp; Haroon</p>
+          <svg class="divider" viewBox="0 0 240 24" aria-hidden="true">
+            <use href="#divider" />
+          </svg>
+        </header>
+
+        <div class="card__grid">
+          <!-- Left: when and where -->
+          <div class="col">
+            <div class="date-block">
+              <span class="date-block__day">Friday</span>
+              <span class="date-block__num">30</span>
+              <span class="date-block__month">October 2026</span>
+            </div>
+
+            <ul class="info">
+              <!-- EDIT: timing. Keep CONFIG.eventStart in the script in sync. -->
+              <li>
+                <svg class="ico" aria-hidden="true">
+                  <use href="#ico-clock" />
+                </svg>
+                <div><strong>7:30 PM</strong> onwards<br><span class="muted">Dinner to follow</span></div>
+              </li>
+              <!-- EDIT: venue name and address -->
+              <li>
+                <div class="venue-wrap">
+
+                  <div class="venue-title">
+                    <svg class="ico" aria-hidden="true">
+                      <use href="#ico-pin" />
+                    </svg>
+
+                    <strong id="venueName">Victoria Marquee</strong>
+                  </div>
+
+                  <span id="venueAddress">
+                    16 W Canal Rd, Amin Town, Faisalabad
+                  </span>
+
+                  <br>
+
+                  <a id="mapLink" href="#" target="_blank">
+                    View on map
+                  </a>
+
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Right: countdown and actions -->
+          <div class="col">
+            <div>
+              <div class="countdown" aria-live="polite" aria-label="Countdown to the ceremony">
+                <div class="cd"><span class="cd__num" id="cdDays">00</span><span class="cd__label">Days</span></div>
+                <div class="cd"><span class="cd__num" id="cdHours">00</span><span class="cd__label">Hours</span></div>
+                <div class="cd"><span class="cd__num" id="cdMins">00</span><span class="cd__label">Mins</span></div>
+                <div class="cd"><span class="cd__num" id="cdSecs">00</span><span class="cd__label">Secs</span></div>
+              </div>
+              <p class="cd__note" id="cdNote">until the celebration begins</p>
+            </div>
+
+            <div class="actions">
+              <div class="menu-wrap">
+                <button class="btn btn--gold" id="calBtn" type="button" aria-haspopup="true" aria-expanded="false">Add
+                  to Calendar</button>
+                <div class="menu" id="calMenu" hidden>
+                  <a id="gcalLink" href="#" target="_blank" rel="noopener">Google Calendar</a>
+                  <a id="icsLink" href="#">Apple / Outlook (.ics)</a>
+                </div>
+              </div>
+              <a class="btn btn--crimson" id="rsvpBtn" href="#" target="_blank" rel="noopener">Be Our Guest</a>
+            </div>
+          </div>
+        </div>
+
+        <p class="card__foot">Your presence will make our celebration complete</p>
+      </article>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      'use strict';
+
+      /* ===================================================================
+         CONFIG: the only things you need to edit for a new event
+         =================================================================== */
+      const CONFIG = {
+        // Event start and end in ISO format with timezone (+05:00 = Pakistan)
+        eventStart: '2026-10-30T19:00:00+05:00',
+        eventEnd: '2026-10-30T23:00:00+05:00',
+
+        // Calendar entry text
+        calendarTitle: 'Hamna & Haroon - Engagement Ceremony',
+        calendarNotes: 'You are warmly invited to the Engagement of Hamna and Haroon. Dinner to follow.',
+
+        // Map link for the "View on map" anchor (Google Maps share link works best)
+        mapsUrl: 'https://maps.app.goo.gl/6JGC2BdnJ2VZe7VaA',
+
+        // RSVP: WhatsApp number in international format without "+" or spaces.
+        // Leave whatsappNumber empty and fill rsvpEmail to use an e-mail RSVP instead.
+        whatsappNumber: '923181747932',
+        rsvpEmail: '',
+        rsvpMessage: 'Assalam o Alaikum! I would love to confirm my attendance for the engagement of Hamna & Haroon on Friday, 30 October 2026.',
+
+        // Ambient effects
+        petalCount: { mobile: 12, desktop: 22 },
+        sparkleCount: 26
+      };
+
+      /* ===================================================================
+         Helpers
+         =================================================================== */
+      const $ = (sel, root = document) => root.querySelector(sel);
+      const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const pad2 = (n) => String(n).padStart(2, '0');
+
+      /* ===================================================================
+         1. "Open Invitation" cue: scroll to screen two
+         =================================================================== */
+      $('#openInvite').addEventListener('click', () => {
+        $('#details').scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });
+      });
+
+      /* ===================================================================
+         2. Fade-in reveal (runs once per element)
+         =================================================================== */
+      const revealEls = $$('[data-reveal]');
+      if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-in');
+              io.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.15 });
+        revealEls.forEach((el) => io.observe(el));
+      } else {
+        revealEls.forEach((el) => el.classList.add('is-in'));
+      }
+
+      /* ===================================================================
+         3. Countdown timer
+         =================================================================== */
+      const target = new Date(CONFIG.eventStart).getTime();
+      const cd = {
+        d: $('#cdDays'), h: $('#cdHours'), m: $('#cdMins'), s: $('#cdSecs'), note: $('#cdNote')
+      };
+      let timer;
+
+      function tick() {
+        if (Number.isNaN(target)) {
+          cd.note.textContent = 'Check CONFIG.eventStart in index.html';
+          return;
+        }
+        const diff = target - Date.now();
+        if (diff <= 0) {
+          cd.d.textContent = cd.h.textContent = cd.m.textContent = cd.s.textContent = '00';
+          cd.note.textContent = 'The celebration has begun, Alhamdulillah!';
+          clearInterval(timer);
+          return;
+        }
+        cd.d.textContent = pad2(Math.floor(diff / 864e5));
+        cd.h.textContent = pad2(Math.floor(diff / 36e5) % 24);
+        cd.m.textContent = pad2(Math.floor(diff / 6e4) % 60);
+        cd.s.textContent = pad2(Math.floor(diff / 1e3) % 60);
+      }
+      tick();
+      timer = setInterval(tick, 1000);
+
+      /* ===================================================================
+         4. Map link
+         =================================================================== */
+      $('#mapLink').href = CONFIG.mapsUrl;
+
+      /* ===================================================================
+         5. Add to Calendar (Google link + downloadable .ics)
+         =================================================================== */
+      const start = new Date(CONFIG.eventStart);
+      const end = new Date(CONFIG.eventEnd);
+      const venue = $('#venueName').textContent.trim() + ', ' + $('#venueAddress').textContent.trim();
+
+      // 2026-10-30T14:00:00.000Z  ->  20261030T140000Z
+      const toUTC = (date) => date.toISOString().replace(/[-:]|\.\d{3}/g, '');
+
+      // Google Calendar deep link
+      const gcalUrl = 'https://calendar.google.com/calendar/render?action=TEMPLATE'
+        + '&text=' + encodeURIComponent(CONFIG.calendarTitle)
+        + '&dates=' + toUTC(start) + '/' + toUTC(end)
+        + '&details=' + encodeURIComponent(CONFIG.calendarNotes)
+        + '&location=' + encodeURIComponent(venue);
+      $('#gcalLink').href = gcalUrl;
+
+      // .ics file for Apple Calendar, Outlook, etc.
+      const escapeICS = (s) => String(s)
+        .replace(/\\/g, '\\\\').replace(/;/g, '\\;').replace(/,/g, '\\,').replace(/\n/g, '\\n');
+      const ics = [
+        'BEGIN:VCALENDAR',
+        'VERSION:2.0',
+        'PRODID:-//Hamna and Haroon//Engagement Invitation//EN',
+        'CALSCALE:GREGORIAN',
+        'BEGIN:VEVENT',
+        'UID:haroon-hamna-mangni-' + toUTC(start) + '@invite',
+        'DTSTAMP:' + toUTC(new Date()),
+        'DTSTART:' + toUTC(start),
+        'DTEND:' + toUTC(end),
+        'SUMMARY:' + escapeICS(CONFIG.calendarTitle),
+        'DESCRIPTION:' + escapeICS(CONFIG.calendarNotes),
+        'LOCATION:' + escapeICS(venue),
+        'END:VEVENT',
+        'END:VCALENDAR'
+      ].join('\r\n');
+      const icsLink = $('#icsLink');
+      icsLink.href = URL.createObjectURL(new Blob([ics], { type: 'text/calendar;charset=utf-8' }));
+      icsLink.download = 'haroon-hamna-engagement.ics';
+
+      // Dropdown open/close
+      const calBtn = $('#calBtn');
+      const calMenu = $('#calMenu');
+      const closeMenu = () => { calMenu.hidden = true; calBtn.setAttribute('aria-expanded', 'false'); };
+      calBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const willOpen = calMenu.hidden;
+        calMenu.hidden = !willOpen;
+        calBtn.setAttribute('aria-expanded', String(willOpen));
+      });
+      document.addEventListener('click', closeMenu);
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+
+      /* ===================================================================
+         6. RSVP button (WhatsApp by default, e-mail as fallback)
+         =================================================================== */
+      const rsvpBtn = $('#rsvpBtn');
+      if (CONFIG.whatsappNumber) {
+        rsvpBtn.href = 'https://wa.me/' + CONFIG.whatsappNumber + '?text=' + encodeURIComponent(CONFIG.rsvpMessage);
+      } else if (CONFIG.rsvpEmail) {
+        rsvpBtn.href = 'mailto:' + CONFIG.rsvpEmail
+          + '?subject=' + encodeURIComponent('RSVP: Hamna & Haroon Engagement')
+          + '&body=' + encodeURIComponent(CONFIG.rsvpMessage);
+        rsvpBtn.removeAttribute('target');
+      } else {
+        rsvpBtn.hidden = true;
+      }
+
+      /* ===================================================================
+         7. Ambient motion: floating petals + sparkles (skipped for reduced motion)
+         =================================================================== */
+      function createPetals() {
+        const layer = $('#petals');
+        const isMobile = window.matchMedia('(max-width: 640px)').matches;
+        const count = isMobile ? CONFIG.petalCount.mobile : CONFIG.petalCount.desktop;
+        const frag = document.createDocumentFragment();
+        for (let i = 0; i < count; i++) {
+          const p = document.createElement('i');
+          p.className = 'petal';
+          p.style.setProperty('--x', (Math.random() * 100).toFixed(2) + 'vw');
+          p.style.setProperty('--s', (5 + Math.random() * 6).toFixed(1) + 'px');
+          p.style.setProperty('--d', (9 + Math.random() * 9).toFixed(1) + 's');
+          p.style.setProperty('--delay', (-Math.random() * 18).toFixed(1) + 's'); // negative: already mid-fall on load
+          p.style.setProperty('--r', Math.floor(Math.random() * 360) + 'deg');
+          p.style.setProperty('--o', (0.55 + Math.random() * 0.4).toFixed(2));
+          frag.appendChild(p);
+        }
+        layer.appendChild(frag);
+      }
+
+      function createSparkles() {
+        const hero = $('#hero');
+        const frag = document.createDocumentFragment();
+        for (let i = 0; i < CONFIG.sparkleCount; i++) {
+          const s = document.createElement('i');
+          s.className = 'sparkle';
+          s.style.left = (Math.random() * 100).toFixed(2) + '%';
+          s.style.top = (Math.random() * 100).toFixed(2) + '%';
+          s.style.setProperty('--size', (2 + Math.random() * 3).toFixed(1) + 'px');
+          s.style.animationDuration = (2.4 + Math.random() * 3).toFixed(2) + 's';
+          s.style.animationDelay = (-Math.random() * 5).toFixed(2) + 's';
+          frag.appendChild(s);
+        }
+        hero.appendChild(frag);
+      }
+
+      if (!reduceMotion) {
+        createPetals();
+        createSparkles();
+      }
+    })();
+  </script>
+</body>
+
+</html>
