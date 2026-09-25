@@ -1255,9 +1255,15 @@
       /* ===================================================================
          1. "Open Invitation" cue: scroll to screen two
          =================================================================== */
-      $('#openInvite').addEventListener('click', () => {
-        $('#details').scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });
-      });
+     const openInvite = $('#openInvite');
+
+if (openInvite) {
+  openInvite.addEventListener('click', () => {
+    $('#details').scrollIntoView({
+      behavior: reduceMotion ? 'auto' : 'smooth'
+    });
+  });
+}
 
       /* ===================================================================
          2. Fade-in reveal (runs once per element)
