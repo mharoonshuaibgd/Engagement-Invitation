@@ -4,12 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Hamna &amp; Haroon | Engagement Invitation</title>
+  <title>Haroon &amp; Hamna | Engagement Invitation</title>
   <meta name="description"
     content="You are warmly invited to the engagement ceremony of Hamna and Haroon on Friday, 30 October 2026.">
   <meta name="theme-color" content="#06402b">
-  <meta property="og:title" content="Hamna & Haroon | Engagement Invitation">
-  <meta property="og:description" content="Join us for the Mangni of Hamna & Haroon on Friday, 30 October 2026.">
+  <meta property="og:title" content="Haroon & Hamna | Engagement Invitation">
+  <meta property="og:description" content="Join us for the Mangni of Haroon & Hamna on Friday, 30 October 2026.">
   <meta property="og:type" content="website">
 
   <!-- Favicon: a tiny inline marigold, no external file needed -->
@@ -1091,9 +1091,9 @@
             <circle cx="200" cy="22" r="3" fill="#d4af37" />
           </svg>
           <h1 class="names">
-            <span class="names__name">Hamna</span>
-            <span class="names__amp">&amp;</span>
             <span class="names__name">Haroon</span>
+            <span class="names__amp">&amp;</span>
+            <span class="names__name">Hamna</span>
             <svg class="names__flower" viewBox="0 0 100 100" aria-hidden="true">
               <use href="#marigold" width="100" height="100" />
             </svg>
@@ -1136,7 +1136,7 @@
         <header class="card__head">
           <p class="card__eyebrow">You are warmly invited to the</p>
           <h2 class="card__title">Engagement Ceremony</h2>
-          <p class="card__sub">of Hamna &amp; Haroon</p>
+          <p class="card__sub">of Haroon &amp; Hamna</p>
           <svg class="divider" viewBox="0 0 240 24" aria-hidden="true">
             <use href="#divider" />
           </svg>
@@ -1230,8 +1230,8 @@
         eventEnd: '2026-10-30T23:00:00+05:00',
 
         // Calendar entry text
-        calendarTitle: 'Hamna & Haroon - Engagement Ceremony',
-        calendarNotes: 'You are warmly invited to the Engagement of Hamna and Haroon. Dinner to follow.',
+        calendarTitle: 'Haroon & Hamna - Engagement Ceremony',
+        calendarNotes: 'You are warmly invited to the Engagement of Haroon and Hamna. Dinner to follow.',
 
         // Map link for the "View on map" anchor (Google Maps share link works best)
         mapsUrl: 'https://maps.app.goo.gl/6JGC2BdnJ2VZe7VaA',
@@ -1240,7 +1240,7 @@
         // Leave whatsappNumber empty and fill rsvpEmail to use an e-mail RSVP instead.
         whatsappNumber: '923181747932',
         rsvpEmail: '',
-        rsvpMessage: 'Assalam o Alaikum! I would like to confirm my attendance for the engagement of Hamna & Haroon on Friday, 30 October 2026.',
+        rsvpMessage: 'Assalam o Alaikum! I would like to confirm my attendance for the engagement of Haroon & Hamna on Friday, 30 October 2026.',
 
         // Ambient effects
         petalCount: { mobile: 12, desktop: 22 },
@@ -1338,7 +1338,7 @@
       const ics = [
         'BEGIN:VCALENDAR',
         'VERSION:2.0',
-        'PRODID:-//Hamna and Haroon//Engagement Invitation//EN',
+        'PRODID:-//Haroon and Hamna//Engagement Invitation//EN',
         'CALSCALE:GREGORIAN',
         'BEGIN:VEVENT',
         'UID:haroon-hamna-mangni-' + toUTC(start) + '@invite',
@@ -1376,7 +1376,7 @@
         rsvpBtn.href = 'https://wa.me/' + CONFIG.whatsappNumber + '?text=' + encodeURIComponent(CONFIG.rsvpMessage);
       } else if (CONFIG.rsvpEmail) {
         rsvpBtn.href = 'mailto:' + CONFIG.rsvpEmail
-          + '?subject=' + encodeURIComponent('RSVP: Hamna & Haroon Engagement')
+          + '?subject=' + encodeURIComponent('RSVP: Haroon & Hamna Engagement')
           + '&body=' + encodeURIComponent(CONFIG.rsvpMessage);
         rsvpBtn.removeAttribute('target');
       } else {
